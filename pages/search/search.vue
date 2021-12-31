@@ -1,5 +1,8 @@
 <template>
 	<view class="x-search">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<uni-nav-bar left-icon="back" rightIcon="search" :border="false" @clickLeft="$Fn.turnoff()"
 			@clickRight="toSearch">
 			<view class="" slot="default">
@@ -59,6 +62,11 @@
 	}
 
 	.x-search {
+		.status_bar {
+			height: var(--status-bar-height);
+			width: 100%;
+		}
+
 		.search-List {
 			padding: 0 40rpx;
 		}
@@ -73,11 +81,13 @@
 
 		.detail-item-center-l {
 			justify-content: space-around;
-			.x-tag{
+
+			.x-tag {
 				background-color: #fb9649;
 				border-radius: 50rpx;
 				padding: 4rpx 10rpx;
-				.tag-text{
+
+				.tag-text {
 					font-size: 24rpx;
 					transform: scale(0.75);
 					color: #fff;
@@ -92,18 +102,20 @@
 				width: 180rpx;
 				height: 50rpx;
 				border-radius: 8rpx;
-				background-color:  #02d48f;
+				background-color: #02d48f;
 				color: #fff;
 				line-height: 50rpx;
 				text-align: center;
 				margin-bottom: 10rpx;
 			}
 		}
-		.c-gary{
+
+		.c-gary {
 			color: #A2a2a2;
 		}
-		.bg-gray{
-			background-color: #dbe0de!important;
+
+		.bg-gray {
+			background-color: #dbe0de !important;
 		}
 	}
 </style>

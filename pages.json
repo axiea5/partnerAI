@@ -1,6 +1,13 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
+			"path": "pages/login/login",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+		
+		},{
 			"path": "pages/index/index",
 			"style": {
 				"navigationStyle": "custom" // 隐藏系统导航栏
@@ -64,7 +71,8 @@
 			"path": "pages/tradingRecord/tradingRecord",
 			"style": {
 				"navigationStyle": "custom",
-				"enablePullDownRefresh": false
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
 			}
 
 		}, {
@@ -164,13 +172,6 @@
 			}
 
 		}, {
-			"path": "pages/login/login",
-			"style": {
-				"navigationStyle": "custom",
-				"enablePullDownRefresh": false
-			}
-
-		}, {
 			"path": "pages/contactUs/contactUs",
 			"style": {
 				"navigationBarTitleText": "联系我们",
@@ -228,8 +229,7 @@
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "partAI",
-		"backgroundColor": "#F8F8F8"
+		"navigationBarTitleText": "partAI"
 	},
 	"tabBar": {
 		"color": "#979797",

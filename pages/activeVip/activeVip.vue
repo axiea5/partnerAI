@@ -1,7 +1,7 @@
 <template>
 	<view class="x-activeVip">
 		<view class="top-up">
-			<view class="up-item df df-col df-center" v-for="(item,index) in dataList" :key="index">
+			<view class="up-item df df-col df-center" :class="activeIndex===index&&'active'" v-for="(item,index) in dataList" :key="index" @click="activeVip(index)">
 				<text class="bold">{{item.text1}}个月</text>
 				<text class="blue bold">{{item.text2}}USDT</text>
 				<text>{{item.text3}}个月</text>
@@ -29,8 +29,14 @@
 					text1: 12,
 					text2: 200,
 					text3: 12
-				}]
+				}],
+				activeIndex:false
 			};
+		},
+		methods:{
+			activeVip(index){
+				this.activeIndex = index
+			}
 		}
 	}
 </script>
@@ -60,6 +66,9 @@
 					color: #4080da;
 					margin: 26rpx 0;
 				}
+			}
+			.active{
+				border-color: #4387ea;
 			}
 		}
 		.x-btn{

@@ -1,5 +1,5 @@
 <template>
-	<view class="x-resetPsw">
+	<view class="x-resetPsw" style="background-color: #F8F8F8;">
 		<view class="x-form">
 			<u--form labelPosition="left" labelWidth="75" errorType="'none'" :model="form" :rules="rules" ref="form">
 				<u-form-item label="手机号" v-if="getBack" prop="phone" borderBottom ref="phone">

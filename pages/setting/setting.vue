@@ -1,5 +1,5 @@
 <template>
-	<view class="x-setting">
+	<view class="x-setting" style="background-color: #F8F8F8;">
 		<u-cell-group class="x-group group1">
 			<u-cell v-for="item in list1" :isLink="true" :title="item.text"
 				@click="$Fn.toPage(item.url,{name:item.name})">
@@ -7,7 +7,7 @@
 		</u-cell-group>
 
 		<u-cell-group class="x-group">
-			<u-cell title="联系我们" @click="$Fn.toPage('../contactUs/contactUs')"></u-cell>
+			<u-cell title="联系我们" :isLink="true" @click="$Fn.toPage('../contactUs/contactUs')"></u-cell>
 			<u-cell title="软件版本" value="1.0.3"></u-cell>
 			<u-cell title="清除缓存" :value="storageSize" @click="clearStorage"></u-cell>
 		</u-cell-group>
@@ -91,7 +91,7 @@
 	.x-setting {
 		.x-group {
 			padding: 0 30rpx;
-			background-color: #fff;
+			background-color: #ffffff;
 
 			/deep/.u-cell-group__wrapper {
 				.u-cell__value {

@@ -1,7 +1,11 @@
 <template>
 	<view class="x-tradingRecord">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<!-- 顶部导航 -->
-		<uni-nav-bar left-icon="back" class="nav-bar" title="交易记录" :border="false" @clickLeft="$Fn.turnoff" @clickRight="popupShow=true">
+		<uni-nav-bar left-icon="back" class="nav-bar" title="交易记录" :border="false" @clickLeft="$Fn.turnoff"
+			@clickRight="popupShow=true" backgroundColor="#fff">
 			<view slot="right">
 				<u-icon name="../../static/guolv.png"></u-icon>
 			</view>
@@ -42,13 +46,13 @@
 
 		<!-- 标签栏 -->
 		<u-tabs :list="navList" class="nav-tabs" @click="clickNav"
-			:activeStyle="{color:'#4086f0',fontWeight:700,fontSize:'28rpx'}" :inactiveStyle="{fontSize:'28rpx'}">
+			:activeStyle="{color:'#4086f0',fontWeight:700,fontSize:'28rpx'}" :inactiveStyle="{fontSize:'28rpx'}" style="background-color: #FFFFFF;"
 		</u-tabs>
 		<!-- 内容 -->
 		<view class="hasno">暂无数据</view>
-		
+
 		<!-- 底部 -->
-		<view class="total df df-betw">
+		<view class="total df df-betw" style="background-color: #FFFFFF;">
 			<text>合计盈利：<text class="green">0USDT</text></text>
 			<text>交易0单</text>
 		</view>
@@ -121,6 +125,11 @@
 	}
 
 	.x-tradingRecord {
+		.status_bar {
+			height: var(--status-bar-height);
+			width: 100%;
+		}
+
 		.nav-bar {
 			/deep/.uni-nav-bar-text {
 				font-size: 32rpx;
@@ -140,6 +149,7 @@
 
 		.popup-content {
 			width: 80vw;
+
 			.content-head {
 				font-size: 32rpx;
 				font-weight: bold;
@@ -164,28 +174,33 @@
 				position: absolute;
 				bottom: 0;
 				width: 100%;
-				.btn{
+
+				.btn {
 					flex: 1;
-					text-align:center;
-					padding: 30rpx 0 ;
+					text-align: center;
+					padding: 30rpx 0;
 				}
-				.gray{
+
+				.gray {
 					background-color: #ededed;
 				}
-				.blue{
+
+				.blue {
 					background-color: #4388e9;
 					color: #fff;
 				}
 			}
 		}
-		.total{
+
+		.total {
 			position: absolute;
 			bottom: 0;
 			width: 100%;
 			padding: 38rpx 30rpx 34rpx;
 			box-sizing: border-box;
 			background-color: #fff;
-			.green{
+
+			.green {
 				color: #3ebe93;
 			}
 		}

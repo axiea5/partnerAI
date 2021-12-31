@@ -1,5 +1,8 @@
 <template>
 	<view class="home">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<!-- 轮播图 -->
 		<view class="x-swiper">
 			<swiper class="swiper" :indicator-dots="true" :indicator-active-color="'#fff'" :autoplay="true">
@@ -15,7 +18,7 @@
 
 		<!-- 授权、客服、注册 -->
 		<view class="advertising">
-			<view class="ad-item" v-for="item in advertising" @click="$Fn.toPage(item.url)">
+			<view class="ad-item" v-for="item in advertising" :key="item.img" @click="$Fn.toPage(item.url)">
 				<image :src="item.img"></image>
 			</view>
 		</view>
@@ -118,6 +121,11 @@
 
 <style lang="scss" scoped>
 	.home {
+		.status_bar {
+			height: var(--status-bar-height);
+			width: 100%;
+		}
+
 		.x-swiper {
 			height: 278rpx;
 			padding: 25rpx 25rpx 0;

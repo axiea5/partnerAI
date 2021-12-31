@@ -1,5 +1,8 @@
 <template>
 	<view class="x-authorizeKey">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<u-navbar class="navbar" :title="title" @rightClick="rightClick" @leftClick="leftClick" :rightText="'查看教程'">
 		</u-navbar>
 		<view class="authorizeKey-tag">
@@ -87,6 +90,10 @@
 
 <style lang="scss">
 	.x-authorizeKey {
+		.status_bar {
+			height: var(--status-bar-height);
+			width: 100%;
+		}
 		.navbar {
 			/deep/.u-navbar__content__title {
 				font-weight: 700;

@@ -1,8 +1,12 @@
 <template>
 	<view class="x-deal">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<!-- 头部 -->
 		<view class="x-nav df df-betw df-center">
-			<u-icon name="search" color="#000" size="20" class="search" @click="$Fn.toPage('../search/search')"></u-icon>
+			<u-icon name="search" color="#000" size="20" class="search" @click="$Fn.toPage('../search/search')">
+			</u-icon>
 			<view class="headName df" @click="show=true">
 				<text>{{headName}}</text>
 				<u-icon name="arrow-down"></u-icon>
@@ -161,6 +165,10 @@
 
 <style lang="scss" scoped>
 	.x-deal {
+		.status_bar {
+			height: var(--status-bar-height);
+			width: 100%;
+		}
 
 		.x-tabs1 {
 			background-color: #4286E7;

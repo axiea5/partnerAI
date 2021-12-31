@@ -1,6 +1,6 @@
 <template>
 	<view class="x-service">
-		<view class="service-text">
+		<view class="service-text" style="background-color: #fff;">
 			<view class="time">
 				在线客服(09:00~22:00)
 			</view>
@@ -12,9 +12,9 @@
 				微信专属客服：(bxe1321)
 			</view>
 		</view>
-		
+
 		<view class="btn">
-		<u-button type="primary" text="联系客服" color="#4387ea"></u-button>
+			<u-button type="primary" text="联系客服" color="#4387ea"></u-button>
 		</view>
 	</view>
 </template>
@@ -33,24 +33,27 @@
 </script>
 
 <style lang="scss" scoped>
-	page{
+	page {
 		background-color: #f8f8f8;
 	}
-.x-service{
-	.service-text{
-		padding: 30rpx;
-		background-color: #fff;
-		.service-detail{
-			color: #8e8e8e;
-			font-size: 24rpx;
-			margin: 68rpx 0 40rpx;
+
+	.x-service {
+		.service-text {
+			padding: 30rpx;
+
+			.service-detail {
+				color: #8e8e8e;
+				font-size: 24rpx;
+				margin: 68rpx 0 40rpx;
+			}
+
+			.exclusive {
+				font-size: 26rpx;
+			}
 		}
-		.exclusive{
-			font-size: 26rpx;
+
+		.btn {
+			margin: 76rpx 30rpx 0;
 		}
 	}
-	.btn{
-		margin: 76rpx 30rpx 0;
-	}
-}
 </style>

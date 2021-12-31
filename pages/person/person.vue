@@ -1,5 +1,8 @@
 <template>
 	<view class="person">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<!-- 头部 -->
 		<!-- 未登录 -->
 		<view v-if="!login" class="x-head df df-betw df-center">
@@ -140,6 +143,11 @@
 		background-color: #f8f8f8;
 		padding: 28rpx 30rpx;
 
+		.status_bar {
+			height: var(--status-bar-height);
+			width: 100%;
+		}
+
 		.x-head {
 			display: flex;
 			margin-bottom: 30rpx;
@@ -183,7 +191,8 @@
 					font-weight: bold;
 					margin-top: 10rpx;
 				}
-				.block{
+
+				.block {
 					height: 38.4rpx;
 				}
 			}

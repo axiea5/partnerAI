@@ -1,5 +1,8 @@
 <template>
 	<view class="x-login">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<view class="login-in">
 			<!-- logo -->
 			<view class="login-icon">
@@ -15,7 +18,7 @@
 					<u-form-item prop="password" ref="password">
 						<u--input v-model="form.password" prefixIcon="lock-fill"
 							prefixIconStyle="font-size:40rpx;color: #bfbdbd" shape="circle" border="surround"
-							fontSize="13" placeholder="请输入密码"></u--input>
+							fontSize="13" :password="true" placeholder="请输入密码"></u--input>
 					</u-form-item>
 					<u-form-item prop="code" ref="code">
 						<u--input v-model="form.code" shape="circle" prefixIcon="../../static/dun2.png"
@@ -101,8 +104,11 @@
 			},
 			submit() {
 				this.$refs.form.validate().then(res => {
-					uni.$u.toast('校验通过')
+					uni.switchTab({
+					    url: '/pages/index/index'
+					});
 				}).catch(errors => {
+					console.log(errors);
 					uni.$u.toast(errors[0].message)
 				})
 			}
@@ -116,6 +122,11 @@
 	}
 
 	.x-login {
+		.status_bar {
+			height: var(--status-bar-height);
+			width: 100%;
+		}
+		
 		.login-in {
 			position: absolute;
 			top: 50%;

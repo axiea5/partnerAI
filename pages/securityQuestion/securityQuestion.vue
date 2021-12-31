@@ -1,5 +1,5 @@
 <template>
-	<view class="x-securityQuestion">
+	<view class="x-securityQuestion" style="background-color: #F8F8F8;">
 		<view class="x-form">
 			<u--form labelPosition="left" labelWidth="auto" errorType="'none'" :model="form" :rules="rules" ref="form">
 				<u-form-item label="原密保问题:" @click="show1=true" borderBottom ref="quest1">

@@ -1,5 +1,8 @@
 <template>
 	<view class="x-share" id="x-share">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<view class="img">
 			<u-icon name="arrow-left" color="#fff" size="20" :bold="true" top="15" @click="$Fn.turnoff"></u-icon>
 		</view>
@@ -70,7 +73,12 @@
 		position: relative;
 		height: 100vh;
 		width: 100vw;
-		background: url(../../static/share-bg.jpg) center top/100% no-repeat;
+		background: #12194b url(../../static/share-bg.jpg) center top/100% no-repeat;
+
+		.status_bar {
+			height: var(--status-bar-height);
+			width: 100%;
+		}
 
 		.img {
 			/deep/.u-icon__icon {
