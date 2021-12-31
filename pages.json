@@ -1,0 +1,261 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle": "custom" // 隐藏系统导航栏
+			}
+		}, {
+			"path": "pages/deal/deal",
+			"style": {
+				"navigationStyle": "custom" // 隐藏系统导航栏
+			}
+		}, {
+			"path": "pages/message/message",
+			"style": {
+				"navigationBarTitleText": "公告",
+				"navigationBarBackgroundColor": "#ffffff",
+				"enablePaullDownRefresh": false
+			}
+		}, {
+			"path": "pages/person/person",
+			"style": {
+				"navigationStyle": "custom" // 隐藏系统导航栏
+			}
+		}, {
+			"path": "pages/authorize/authorize",
+			"style": {
+				"navigationBarTitleText": "API授权",
+				"navigationBarBackgroundColor": "#ffffff",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/service/service",
+			"style": {
+				"navigationBarTitleText": "联系客服",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/share/share",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/setting/setting",
+			"style": {
+				"navigationBarTitleText": "设置",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/financial/financial",
+			"style": {
+				"navigationBarTitleText": "财务管理",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/tradingRecord/tradingRecord",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/activeVip/activeVip",
+			"style": {
+				"navigationBarTitleText": "会员激活VIP",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/earnings/earnings",
+			"style": {
+				"navigationBarTitleText": "我的收益",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/dealLog/dealLog",
+			"style": {
+				"navigationBarTitleText": "交易日志",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/team/team",
+			"style": {
+				"navigationBarTitleText": "我的团队",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/authorizeKey/authorizeKey",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/userInfo/userInfo",
+			"style": {
+				"navigationBarTitleText": "个人信息",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/resetPsw/resetPsw",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/securityQuestion/securityQuestion",
+			"style": {
+				"navigationBarTitleText": "修改密保问题",
+				"navigationBarBackgroundColor": "#4388e8",
+				"enablePullDownRefresh": false,
+				"navigationBarTextStyle": "white"
+			}
+
+		}, {
+			"path": "pages/verificationKey/verificationKey",
+			"style": {
+				"navigationBarTitleText": "获取验证器密钥",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/setVerification/setVerification",
+			"style": {
+				"navigationBarTitleText": "设置验证码",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/financialRecord/financialRecord",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false,
+				"navigationBarBackgroundColor": "#ffffff"
+			}
+
+		}, {
+			"path": "pages/register/register",
+			"style": {
+				"navigationBarTitleText": "注册",
+				"navigationBarBackgroundColor": "#ffffff",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/login/login",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/contactUs/contactUs",
+			"style": {
+				"navigationBarTitleText": "联系我们",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/financialTransition/financialTransition",
+			"style": {
+				"navigationBarTitleText": "",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/recharge/recharge",
+			"style": {
+				"navigationBarTitleText": "充值",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/withdraw/withdraw",
+			"style": {
+				"navigationBarTitleText": "提现",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/usdtAddress/usdtAddress",
+			"style": {
+				"navigationBarTitleText": "USDT地址",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/usdtAddressAdd/usdtAddressAdd",
+			"style": {
+				"navigationBarTitleText": "添加USDT地址",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+		}, {
+			"path": "pages/search/search",
+			"style": {
+				"navigationStyle": "custom",
+				"enablePullDownRefresh": false
+			}
+
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "partAI",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar": {
+		"color": "#979797",
+		"selectedColor": "#4189E7",
+		"backgroundColor": "#fff",
+		"iconWidth": "24px",
+		"list": [{
+			"pagePath": "pages/index/index",
+			"iconPath": "static/pic1.png",
+			"selectedIconPath": "static/pic2.png",
+			"text": "首页"
+		}, {
+			"pagePath": "pages/deal/deal",
+			"iconPath": "static/pic3.png",
+			"selectedIconPath": "static/pic4.png",
+			"text": "交易"
+		}, {
+			"pagePath": "pages/message/message",
+			"iconPath": "static/pic5.png",
+			"selectedIconPath": "static/pic6.png",
+			"text": "公告"
+		}, {
+			"pagePath": "pages/person/person",
+			"iconPath": "static/pic7.png",
+			"selectedIconPath": "static/pic8.png",
+			"text": "我的"
+		}]
+	}
+}
