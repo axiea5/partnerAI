@@ -26,7 +26,6 @@
 		},
 		methods: {
 			canvasImg() {
-				console.log(111)
 				var pages = getCurrentPages(); //获取当前页面信息
 				console.log(pages)
 				var page = pages[pages.length - 1];
@@ -64,16 +63,17 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
 		background-color: #13194e;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.x-share {
 		position: relative;
 		height: 100vh;
 		width: 100vw;
-		background: #12194b url(../../static/share-bg.jpg) center top/100% no-repeat;
+		background: #12194b url(../../static/share-bg.jpg) center -2px/100% no-repeat;
 
 		.status_bar {
 			height: var(--status-bar-height);
@@ -89,7 +89,7 @@
 		.share {
 			bottom: 50rpx;
 			position: fixed;
-			background: url(../../static/yqhy.png) top/100% no-repeat;
+			background: url(../../static/yqhy.png) -2rpx/100% no-repeat;
 			padding-top: 80rpx;
 			border-radius: 30rpx;
 			width: 670rpx;

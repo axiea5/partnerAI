@@ -13,11 +13,12 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
 		background-color: #F8f8f8;
 	}
+</style>
+<style lang="scss" scoped>
 
 	.x-dealLog {
 		.hasno {

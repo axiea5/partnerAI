@@ -119,11 +119,12 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
 		background-color: #f8f8f8;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.x-tradingRecord {
 		.status_bar {
 			height: var(--status-bar-height);
@@ -133,7 +134,6 @@
 		.nav-bar {
 			/deep/.uni-nav-bar-text {
 				font-size: 32rpx;
-				font-weight: bold;
 			}
 		}
 

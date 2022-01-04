@@ -14,6 +14,7 @@
 
 <style lang="scss">
 	/*每个页面公共css */
+	@import "uni.scss";
 	@import "@/uni_modules/uview-ui/index.scss";
 
 	page {
@@ -61,7 +62,7 @@
 
 	.x-action {
 		/deep/.u-popup__content {
-			margin: 12rpx!important;
+			margin: 12rpx !important;
 
 			.u-action-sheet {
 				.u-gap {

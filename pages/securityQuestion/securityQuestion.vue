@@ -1,5 +1,5 @@
 <template>
-	<view class="x-securityQuestion" style="background-color: #F8F8F8;">
+	<view class="x-securityQuestion">
 		<view class="x-form">
 			<u--form labelPosition="left" labelWidth="auto" errorType="'none'" :model="form" :rules="rules" ref="form">
 				<u-form-item label="原密保问题:" @click="show1=true" borderBottom ref="quest1">
@@ -109,11 +109,12 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
-		background-color: #F8F8F8;
+		background-color: #f8f8f8;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.x-securityQuestion {
 		.x-form {
 			background-color: #fff;

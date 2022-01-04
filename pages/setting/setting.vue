@@ -1,5 +1,5 @@
 <template>
-	<view class="x-setting" style="background-color: #F8F8F8;">
+	<view class="x-setting">
 		<u-cell-group class="x-group group1">
 			<u-cell v-for="item in list1" :isLink="true" :title="item.text"
 				@click="$Fn.toPage(item.url,{name:item.name})">
@@ -13,7 +13,7 @@
 		</u-cell-group>
 
 		<view class="btn">
-			<u-button type="primary" text="退出登录" color="#4387ea"></u-button>
+			<u-button type="primary" text="退出登录" color="#4387ea" @click="quit"></u-button>
 		</view>
 
 	</view>
@@ -38,7 +38,7 @@
 					text: '开启身份验证',
 					url: '../verificationKey/verificationKey'
 				}],
-				storageSize:''
+				storageSize: ''
 			}
 		},
 		onLoad() {
@@ -78,16 +78,28 @@
 						}
 					}
 				})
+			},
+			quit() {
+				var that = this
+				uni.removeStorage({
+					key: 'loginType',
+					success: function(res) {
+						uni.navigateTo({
+							url:'../login/login'
+						})
+					}
+				});
 			}
 		}
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
-		background-color: #F8f8f8;
+		background-color: #f8f8f8;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.x-setting {
 		.x-group {
 			padding: 0 30rpx;

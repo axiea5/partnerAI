@@ -28,11 +28,12 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
 		background-color: #fff;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.x-contactUs {
 		.contactUs-center {
 			margin: 70rpx auto 160rpx;

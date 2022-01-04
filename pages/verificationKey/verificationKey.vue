@@ -64,11 +64,12 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
 		background-color: #f8f8f8;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.x-verificationKey {
 		.verificationKey-tag {
 			background-color: #4388ea;

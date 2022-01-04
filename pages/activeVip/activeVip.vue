@@ -41,9 +41,13 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
 		background-color: #fff;
+	}
+</style>
+<style lang="scss" scoped>
+	page {
 		height: 100%;
 		overflow: hidden;
 	}

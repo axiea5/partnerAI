@@ -122,11 +122,12 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
-		background-color: #F8F8F8;
+		background-color: #f8f8f8;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.x-resetPsw {
 		.x-form {
 			background-color: #fff;

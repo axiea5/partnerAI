@@ -1,6 +1,6 @@
 <template>
 	<view class="x-service">
-		<view class="service-text" style="background-color: #fff;">
+		<view class="service-text">
 			<view class="time">
 				在线客服(09:00~22:00)
 			</view>
@@ -32,13 +32,15 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
 		background-color: #f8f8f8;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.x-service {
 		.service-text {
+			background-color: #fff;
 			padding: 30rpx;
 
 			.service-detail {

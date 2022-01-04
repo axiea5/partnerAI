@@ -134,11 +134,12 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
-		background: #f8f8f8;
+		background-color: #f8f8f8;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.person {
 		background-color: #f8f8f8;
 		padding: 28rpx 30rpx;

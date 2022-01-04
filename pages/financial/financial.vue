@@ -91,12 +91,12 @@
 		}
 	}
 </script>
-
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
-		background-color: #F2F2f2;
+		background-color: #F2F2F2;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.x-financial {
 		.nav-tabs {
 			background-color: #fff;

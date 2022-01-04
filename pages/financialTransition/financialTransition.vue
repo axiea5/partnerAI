@@ -160,12 +160,12 @@
 		},
 	}
 </script>
-
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
 		background-color: #f8f8f8;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.x-financialTransition {
 		.financialTransition-head {
 			margin: 30rpx 30rpx 0;

@@ -229,7 +229,8 @@
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "partAI"
+		"navigationBarTitleText": "partAI",
+		"backgroundColor":"#F8F8F8"
 	},
 	"tabBar": {
 		"color": "#979797",

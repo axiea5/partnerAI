@@ -94,8 +94,15 @@
 		components: {
 			Captcha
 		},
-		onLoad() {
-			console.log(this.captchaVal);
+		created() {
+			uni.getStorage({
+			    key: 'loginType',
+			    success: function (res) {
+			       uni.switchTab({
+			       	url: '/pages/index/index'
+			       });
+			    }
+			});
 		},
 		methods: {
 			captcha(emit) {
@@ -104,8 +111,14 @@
 			},
 			submit() {
 				this.$refs.form.validate().then(res => {
-					uni.switchTab({
-					    url: '/pages/index/index'
+					uni.setStorage({
+					    key: 'loginType',
+					    data: 1,
+					    success: function () {
+					        uni.switchTab({
+					        	url: '/pages/index/index'
+					        });
+					    }
 					});
 				}).catch(errors => {
 					console.log(errors);
@@ -116,17 +129,18 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
 		background-color: #f8f8f8;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.x-login {
 		.status_bar {
 			height: var(--status-bar-height);
 			width: 100%;
 		}
-		
+
 		.login-in {
 			position: absolute;
 			top: 50%;
@@ -148,7 +162,7 @@
 				}
 
 				.u-input {
-					background-color: #fff;
+					background-color: #fff !important;
 				}
 
 				/deep/.u-input--radius {

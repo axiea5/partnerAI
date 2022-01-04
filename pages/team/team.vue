@@ -18,13 +18,15 @@
 	}
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 	page {
-		background-color: #F8f8f8;
+		background-color: #f8f8f8;
 	}
-
+</style>
+<style lang="scss" scoped>
 	.x-team {
 		padding: 54rpx 30rpx 40rpx;
+
 		.team-head {
 			.blue {
 				width: 10rpx;

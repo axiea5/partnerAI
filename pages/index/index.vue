@@ -36,8 +36,8 @@
 				<uni-tr>
 					<uni-th align="center" width="30">币种</uni-th>
 					<uni-th align="center" width="85"></uni-th>
-					<uni-th align="center" width="150" sortable>币市值(CNY)</uni-th>
-					<uni-th align="center" width="80" sortable>价格</uni-th>
+					<uni-th align="center" width="150" :sortable="true">币市值(CNY)</uni-th>
+					<uni-th align="center" width="80" :sortable="true">价格</uni-th>
 				</uni-tr>
 				<!-- 表格数据行 -->
 				<uni-tr>
@@ -112,8 +112,10 @@
 				}]
 			}
 		},
-		onLoad() {
-
+		mounted() {
+			this.$nextTick(() => {
+				document.getElementsByClassName('uni-table')[0].removeAttribute('style')
+			})
 		},
 		methods: {}
 	}
