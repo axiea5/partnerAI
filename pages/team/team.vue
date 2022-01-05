@@ -1,6 +1,6 @@
 <template>
 	<view class="x-team">
-		<view class="team-head df df-center">
+		<view class="team-head df df-acenter">
 			<view class="blue"></view>
 			<text>团队明细</text>
 		</view>

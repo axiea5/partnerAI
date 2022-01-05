@@ -5,8 +5,8 @@
 		</view>
 		<!-- 头部 -->
 		<!-- 未登录 -->
-		<view v-if="!login" class="x-head df df-betw df-center">
-			<view class="head-l df df-center">
+		<view v-if="!login" class="x-head df df-betw df-acenter">
+			<view class="head-l df df-acenter">
 				<u-avatar src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png" shape="circle"
 					size="40"></u-avatar>
 				<text>您未登录，请先登录！</text>
@@ -16,8 +16,8 @@
 			</view>
 		</view>
 		<!-- 已登陆 -->
-		<view v-if="login" class="x-head df df-betw df-center" @click="$Fn.toPage('../userInfo/userInfo')">
-			<view class="head-l df df-center">
+		<view v-if="login" class="x-head df df-betw df-acenter" @click="$Fn.toPage('../userInfo/userInfo')">
+			<view class="head-l df df-acenter">
 				<u-avatar src="https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png" shape="circle"
 					size="40"></u-avatar>
 				<text>杨仔</text>
@@ -40,10 +40,10 @@
 				<view v-show="!numShow" class="block"> </view>
 				<view class="f13">分润收益 0</view>
 			</view>
-			<view class="yield-r df df-betw df-col df-center">
+			<view class="yield-r df df-betw df-col df-acenter">
 				<u-icon name="eye-fill" color="#fff" size="18" v-show="numShow" @click="numShow=!numShow"></u-icon>
 				<u-icon name="eye-off" color="#fff" size="18" v-show="!numShow" @click="numShow=!numShow"></u-icon>
-				<view class="df df-betw df-col df-center" @click="turnPage">
+				<view class="df df-betw df-col df-acenter" @click="turnPage">
 					<image src="../../static/gonggao.png" style="width: 44rpx; height: 44rpx;" mode="aspectFit"></image>
 					<text class="f10">公告</text>
 				</view>
@@ -52,7 +52,7 @@
 
 		<!-- 蓝色块 -->
 		<view class="x-blue df">
-			<view class="blue-item df df-col df-center" v-for="item in blueList" :key="item.text"
+			<view class="blue-item df df-col df-acenter" v-for="item in blueList" :key="item.text"
 				@click="$Fn.toPage(item.url)">
 				<image :src="item.icon" style="width: 60rpx; height: 46rpx;"></image>
 				<text class="blue-text">{{item.text}}</text>

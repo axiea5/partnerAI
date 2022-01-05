@@ -12,7 +12,7 @@
 		<view class="search-List">
 			<view class="df df-betw detail-text c-gary" v-for="item in detailList" :key="item.name">
 				<view class="detail-item-center-l df df-col">
-					<view class="df df-center">
+					<view class="df df-acenter">
 						<text>{{item.name}}</text>
 						<view class="x-tag bg-gray">
 							<text class="tag-text">全仓</text>

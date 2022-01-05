@@ -1,7 +1,7 @@
 <template>
 	<view class="x-recharge">
 		<view class="bg">
-			<view class="sync df df-betw df-center">
+			<view class="sync df df-betw df-acenter">
 				<text>USDT</text>
 				<view class="sync-btn">同步USDT</view>
 			</view>
@@ -9,7 +9,7 @@
 				TRC20
 			</view>
 
-			<view class="recharge-text df df-col df-center">
+			<view class="recharge-text df df-col df-acenter">
 				<view class="qrcode">
 				</view>
 				<view class="text-btn" @click="copyQrcode">

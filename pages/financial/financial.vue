@@ -32,7 +32,7 @@
 
 		<!-- 收益 -->
 		<view class="card" v-show="navIndex===2">
-			<view class="card-in card-in2 df df-betw df-center">
+			<view class="card-in card-in2 df df-betw df-acenter">
 				<view class="df df-col in2-l">
 					<view>
 						<text>总收益(USDT)</text>

@@ -262,10 +262,12 @@
 
 					.dark {
 						color: #000;
+						font-weight: 600;
 					}
 
 					.red {
 						color: #fe2800;
+						font-weight: 600;
 					}
 
 					.align-r {

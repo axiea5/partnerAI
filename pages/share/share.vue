@@ -6,7 +6,7 @@
 		<view class="img">
 			<u-icon name="arrow-left" color="#fff" size="20" :bold="true" top="15" @click="$Fn.turnoff"></u-icon>
 		</view>
-		<view class="share df df-center df-col">
+		<view class="share df df-acenter df-col">
 			<text class="shareId">我的邀请码：EFA180</text>
 			<view class="qrcode">
 			</view>

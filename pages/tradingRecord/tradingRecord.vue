@@ -18,7 +18,7 @@
 					<view class="content-title">交易所</view>
 					<u--input placeholder="请输入交易所" border="surround" :fontSize="14" v-model="bourse"></u--input>
 					<view class="content-title">定义时间</view>
-					<view class="df df-center">
+					<view class="df df-acenter">
 						<view @click="showTime=true;timeIndex=1">
 							<u--input placeholder="开始时间" disabled :fontSize="14" disabledColor="#ffffff"
 								border="surround" v-model="startTime"></u--input>

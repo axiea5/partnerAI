@@ -25,8 +25,11 @@
 		display: flex;
 	}
 
-	.df-center {
+	.df-acenter {
 		align-items: center;
+	}
+	.df-jcenter {
+		justify-content: center;
 	}
 
 	.df-betw {

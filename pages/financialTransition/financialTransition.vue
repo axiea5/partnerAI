@@ -2,9 +2,9 @@
 	<view class="x-financialTransition">
 		<!-- 不是很想写这块 -->
 		<!-- 但是我又不得不写，哎 -->
-		<view class="financialTransition-head df df-center df-betw">
+		<view class="financialTransition-head df df-acenter df-betw">
 			<!-- 左边dot -->
-			<view class="dotList df df-center df-col df-betw">
+			<view class="dotList df df-acenter df-col df-betw">
 				<view class="blue big"></view>
 				<view class="dot"></view>
 				<view class="dot"></view>
@@ -70,7 +70,7 @@
 			<!-- 从。。到。。 end -->
 			
 			<!-- 转换图标 -->
-			<view class="head-right df-center df">
+			<view class="head-right df-acenter df df-jcenter">
 				<image class="right-img" src="../../static/zhuanhuan.png" mode="scaleToFill"
 					style="width:50rpx;height:66rpx ;"></image>
 			</view>
@@ -247,7 +247,6 @@
 			.head-right {
 				width: 140rpx;
 				height: 200rpx;
-				justify-content: center;
 				background-color: #eee;
 
 				.right-img {

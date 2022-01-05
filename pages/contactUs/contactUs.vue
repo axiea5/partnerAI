@@ -1,6 +1,6 @@
 <template>
 	<view class="x-contactUs">
-		<view class="contactUs-center df df-col df-center">
+		<view class="contactUs-center df df-col df-acenter">
 			<text>点击二维码可保存到本地相册</text>
 			<view class="qrcode">
 

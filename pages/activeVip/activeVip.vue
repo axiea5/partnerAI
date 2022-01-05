@@ -1,7 +1,7 @@
 <template>
 	<view class="x-activeVip">
 		<view class="top-up">
-			<view class="up-item df df-col df-center" :class="activeIndex===index&&'active'" v-for="(item,index) in dataList" :key="index" @click="activeVip(index)">
+			<view class="up-item df df-col df-acenter" :class="activeIndex===index&&'active'" v-for="(item,index) in dataList" :key="index" @click="activeVip(index)">
 				<text class="bold">{{item.text1}}个月</text>
 				<text class="blue bold">{{item.text2}}USDT</text>
 				<text>{{item.text3}}个月</text>

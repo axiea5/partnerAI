@@ -1,7 +1,7 @@
 <template>
 	<view class="x-setVerification">
 		<view class="setVerification-pg1" v-if="pgShow===1">
-			<view class="pg1-img df df-center df-col">
+			<view class="pg1-img df df-acenter df-col">
 				<image src="../../static/yz.png" mode="widthFix"
 					style="width: 286rpx; height: 286rpx;margin-bottom: 20rpx;"></image>
 				<text>请在谷歌验证器App中添加一个e账户，并手动输入秘钥。</text>

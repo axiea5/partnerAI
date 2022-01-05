@@ -1,23 +1,23 @@
 <template>
 	<view class="x-earnings">
-		<view class="earnings-head df df-col df-center">
+		<view class="earnings-head df df-col df-acenter">
 			<text>总收益(USDT)</text>
 			<text class="num">0</text>
 			<view class="orange-tag">
 				OKEx合约/U本位
 			</view>
 			<view class="earnings-classify">
-				<view class="df df-col df-center">
+				<view class="df df-col df-acenter">
 					<text>昨日累计收益</text>
 					<text>(USDT)</text>
 					<text>0</text>
 				</view>
-				<view class="df df-col df-center">
+				<view class="df df-col df-acenter">
 					<text>今日累计收益</text>
 					<text>(USDT)</text>
 					<text>0</text>
 				</view>
-				<view class="df df-col df-center">
+				<view class="df df-col df-acenter">
 					<text>本月累计收益</text>
 					<text>(USDT)</text>
 					<text>0</text>
@@ -25,7 +25,7 @@
 			</view>
 		</view>
 		<view class="earnings-detail">
-			<view class="detail-head df df-center">
+			<view class="detail-head df df-acenter">
 				<view class="blue"></view>
 				<text>收益明细</text>
 			</view>

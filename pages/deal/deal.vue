@@ -4,7 +4,7 @@
 			<!-- 这里是状态栏 -->
 		</view>
 		<!-- 头部 -->
-		<view class="x-nav df df-betw df-center">
+		<view class="x-nav df df-betw df-acenter">
 			<u-icon name="search" color="#000" size="20" class="search" @click="$Fn.toPage('../search/search')">
 			</u-icon>
 			<view class="headName df" @click="show=true">
@@ -40,7 +40,7 @@
 			<u-radio-group v-model="radiovalue" placement="column" @change="groupChange">
 				<view class="detail-item df" v-for="(item, index) in detailList" :key="index">
 					<u-radio :customStyle="{margin: '0 20rpx 30rpx 0'}" :iconSize="22" @change="radioChange"></u-radio>
-					<view class="df df-betw detail-text">
+					<view class="df df-betw detail-text" @click="$Fn.toPage('../dealDetail/dealDetail',{name:item.name})">
 						<view class="detail-item-center-l df df-col">
 							<view>
 								{{item.name}}
