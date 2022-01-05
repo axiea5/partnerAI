@@ -31,16 +31,16 @@
 			<view class="x-table-head">
 				行情
 			</view>
-			<uni-table class="x-table-in">
-				<!-- 表头行 -->
-				<uni-tr>
+			<!-- <uni-table class="x-table-in"> -->
+			<!-- 表头行 -->
+			<!-- <uni-tr>
 					<uni-th align="center" width="30">币种</uni-th>
 					<uni-th align="center" width="85"></uni-th>
 					<uni-th align="center" width="150" :sortable="true">币市值(CNY)</uni-th>
 					<uni-th align="center" width="80" :sortable="true">价格</uni-th>
-				</uni-tr>
-				<!-- 表格数据行 -->
-				<uni-tr>
+				</uni-tr> -->
+			<!-- 表格数据行 -->
+			<!-- <uni-tr>
 					<uni-td>
 						<view class="f10">
 							001
@@ -79,12 +79,15 @@
 						<text class="red f10">-5.04%</text>
 					</uni-td>
 				</uni-tr>
-			</uni-table>
+			</uni-table> -->
+
+			<lyy-table :contents="contents" :headers="tableHeaders" :totalRow="[]"></lyy-table>
 		</view>
 	</view>
 </template>
 
 <script>
+	import lyyTable from '@/components/lyy-table/lyy-table.vue'
 	export default {
 		data() {
 			return {
@@ -109,12 +112,76 @@
 				}, {
 					img: '../../static/ad4.png',
 					text: 4
+				}],
+				tableHeaders: [{
+					label: '币种',
+					width: 32,
+					format: {
+						type: 'index'
+					}
+				}, {
+					label: '',
+					key: 'name',
+					width: 85,
+					format: {
+						type: 'html',
+						keys: ['bname', 'tname', 'tname2'],
+						template: "<p class='dark'>{0}</p><text class='f10'>{1}/<br />{2}</text>"
+					}
+				}, {
+					label: '币市值(CNY)',
+					key: 'cny',
+					width: 155,
+					sort: true,
+					format: {
+						type: 'html',
+						keys: ['bcny', 'tcny'],
+						template: "<p class='dark'>{0}万亿</p><text class='f10'>24H:{1}</text>"
+					}
+				}, {
+					label: '价格',
+					key: 'price',
+					width: 83,
+					sort: true,
+					format: {
+						type: 'html',
+						keys: ['bprice', 'tprice'],
+						template: "<p class='red'>${0}</p><text class='red f10'>{1}%</text>"
+					}
+				}],
+				contents: [{
+					'bname': 'BTC',
+					'tname': '比特币',
+					'tname2': 'Bitcion',
+					'bcny': 5.3829,
+					'tcny': 3597.0634552089,
+					'bprice': 46688.7,
+					'tprice': -1.17
+				}, {
+					'bname': 'ETH',
+					'tname': '以太坊',
+					'tname2': 'Ethereum',
+					'bcny': 2.6923,
+					'tcny': 5.8667,
+					'bprice': 3876.22,
+					'tprice': -5.04
+				}, {
+					'bname': 'LTC',
+					'tname': '莱特币',
+					'tname2': '',
+					'bcny': 558.9989,
+					'tcny': 4.2981,
+					'bprice': 3876.22,
+					'tprice': -5.04
 				}]
 			}
 		},
+		components: {
+			lyyTable
+		},
 		mounted() {
 			this.$nextTick(() => {
-				document.getElementsByClassName('uni-table')[0].removeAttribute('style')
+				document.getElementsByClassName('x-table-in')[0].removeAttribute('style')
 			})
 		},
 		methods: {}
@@ -184,34 +251,49 @@
 			}
 
 			.x-table-in {
-				width: 100%;
-
-				th,
-				td {
-					color: #999;
-					font-size: 24rpx;
-				}
-
-				.dark {
-					color: #000;
-				}
-
-				.red {
-					color: #fe2800;
-				}
-
-				.align-r {
-					text-align: right !important;
-				}
-
-				.uni-table-th {
-					padding: 12px 0;
-				}
-
-				uni-text {
-					overflow: hidden;
+				/deep/.uni-table {
 					width: 100%;
+
+					th,
+					td {
+						color: #999;
+
+					}
+
+					.dark {
+						color: #000;
+					}
+
+					.red {
+						color: #fe2800;
+					}
+
+					.align-r {
+						text-align: right !important;
+					}
+
+					.uni-table-th {
+						padding: 12px 0;
+						font-size: 24rpx;
+					}
+
+					.uni-table-td {
+						vertical-align: middle;
+						padding: 16rpx 0;
+						font-size: 24rpx;
+
+						p {
+							font-size: 30rpx;
+						}
+
+						uni-text {
+							overflow: hidden;
+							width: 100%;
+						}
+					}
+
 				}
+
 			}
 		}
 	}
