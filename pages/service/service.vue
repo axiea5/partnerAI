@@ -14,7 +14,7 @@
 		</view>
 
 		<view class="btn">
-			<u-button type="primary" text="联系客服" color="#4387ea"></u-button>
+			<u-button type="primary" text="联系客服"></u-button>
 		</view>
 	</view>
 </template>

@@ -1,7 +1,7 @@
 <template>
 	<view class="x-dealDetail">
-		<u-navbar title="详情" @rightClick="rightClick" @leftClick="$Fn.turnoff()" bgColor="transparent" rightIcon="list"
-			class="nav-bar" :border="true">
+		<u-navbar title="详情" @rightClick="rightClick" @leftClick="$Fn.turnoff()" bgColor="transparent"
+			:rightIcon="dealType===3?'list':dealType===4?'../../static/qian2.png':''" class="nav-bar" :border="true">
 		</u-navbar>
 
 		<view class="dealDetail-head">
@@ -25,7 +25,16 @@
 			</view>
 		</view>
 
-		<view class="dealDetail-btn df df-betw">
+		<!-- dealType===2 -->
+		<view class="dealDetail-btn df df-betw" v-if="dealType===2">
+			<view class="x-btn df df-acenter df-jcenter" v-for="item in btnList1" :key="item.text"
+				:class="item.disabled&&'disabled-btn'">
+				<u-icon :name="item.icon" height="18" width="18" :label="item.text" labelSize="15" labelColor="#fff">
+				</u-icon>
+			</view>
+		</view>
+		<!-- dealType===1/3 -->
+		<view class="dealDetail-btn df df-betw" v-else>
 			<view class="x-btn df df-acenter df-jcenter" v-for="item in btnList" :key="item.text"
 				:class="item.disabled&&'disabled-btn'">
 				<u-icon :name="item.icon" height="18" width="18" :label="item.text" labelSize="15" labelColor="#fff">
@@ -33,7 +42,61 @@
 			</view>
 		</view>
 
-		<view class="dealDetail-cell">
+
+		<!-- dealType===1 -->
+		<view class="dealDetail-cell" v-if="dealType===1">
+			<!-- 首单金额(USDT) -->
+			<view class="cell-item df df-betw df-acenter">
+				<view class="cell-label">
+					首单金额(USDT)
+				</view>
+				<u--input placeholder="请输入" border="none" fontSize="14" inputAlign="right" v-model="firstP"></u--input>
+			</view>
+			<!-- 首单倍数 -->
+			<view class="cell-item df df-betw df-acenter">
+				<view class="cell-label">
+					首单倍数
+				</view>
+				<view class="df df-acenter">
+					<u--input placeholder="请输入金额(USDT)" border="none" fontSize="14" inputAlign="right" v-model="firstM">
+					</u--input>
+					<text class="multiple">x</text>
+				</view>
+			</view>
+			<!-- 策略 -->
+			<view class="cell-item df df-betw df-acenter">
+				<view class="cell-label">
+					策略
+				</view>
+				<view class="check-ipt" @click="tacticsShow=true">
+					<u--input placeholder="请选择适合您的策略" :disabled="true" disabledColor="#fff" inputAlign="right"
+						suffixIcon="arrow-right" border="none" fontSize="14" v-model="tactics"></u--input>
+				</view>
+			</view>
+		</view>
+		<!-- dealType===2 -->
+		<view class="dealDetail-cell" v-if="dealType===2">
+			<!-- 总建仓数量 -->
+			<view class="cell-item df df-betw df-acenter">
+				<view class="cell-label">
+					总建仓数量
+				</view>
+				<u--input placeholder="请输入" border="none" fontSize="14" inputAlign="right" v-model="creatNum">
+				</u--input>
+			</view>
+			<!-- 策略 -->
+			<view class="cell-item df df-betw df-acenter">
+				<view class="cell-label">
+					策略
+				</view>
+				<view class="check-ipt" @click="tacticsShow=true">
+					<u--input placeholder="请选择适合您的策略" :disabled="true" disabledColor="#fff" inputAlign="right"
+						suffixIcon="arrow-right" border="none" fontSize="14" v-model="tactics"></u--input>
+				</view>
+			</view>
+		</view>
+		<!-- dealType===4 -->
+		<view class="dealDetail-cell" v-if="dealType===3||dealType===4">
 			<!-- 首单金额(USDT) -->
 			<view class="cell-item df df-betw df-acenter">
 				<view class="cell-label">
@@ -57,7 +120,8 @@
 					</view>
 					<view class="bg-gray">
 						<u--input placeholder="请输入金额(USDT)" border="none" fontSize="14" inputAlign="right"
-							v-model="firstM"></u--input>
+							v-model="firstM">
+						</u--input>
 					</view>
 					<text class="multiple">x</text>
 				</view>
@@ -67,7 +131,8 @@
 					</view>
 					<view class="bg-gray">
 						<u--input placeholder="请输入金额(USDT)" border="none" fontSize="14" inputAlign="right"
-							v-model="moreM"></u--input>
+							v-model="moreM">
+						</u--input>
 					</view>
 					<text class="multiple">x</text>
 				</view>
@@ -171,6 +236,43 @@
 				</view>
 			</view>
 		</u-popup>
+
+		<!-- 导航栏弹窗 -->
+		<u-action-sheet :actions="navList" :closeOnClickOverlay="true" :closeOnClickAction="true" :cancelText="'取消'"
+			@close="navShow=false" class="x-action" :show="navShow" :round="5" @select="navShowClick">
+		</u-action-sheet>
+
+		<!-- 变换逐全仓模式弹窗 -->
+		<u-popup :show="changeShow" class="stopLosPopup" :round="25" mode="center" :closeOnClickOverlay="true"
+			@close="changeShow=false">
+			<view class="stopLosPopup-content">
+				<view class="popup-head">
+					变换逐全仓模式
+				</view>
+
+				<view class="check-tags df df-betw">
+					<view :class="changeIndex===1?'tag tag-active':'tag'" @click="changeTag(1)">
+						全仓
+					</view>
+					<view :class="changeIndex===2?'tag tag-active':'tag'" @click="changeTag(2)">
+						逐仓
+					</view>
+				</view>
+				<view class="text-popup">
+					· 调整保证金模式仅对当前合约生效。
+				</view>
+				<view class="text-popup">
+					全仓保证金模式: 保证金资产相同的全仓仓位共享该资产的全仓保证金。在强平事件中，交易者可能会损失全部该保证金和该保证金资产下的所有全仓仓位。
+				</view>
+				<view class="text-popup">
+					逐仓保证金模式: 一定数量保证金被分配到仓位上。如果仓位保证金亏损到低于维持保证金的水平，仓位将被强平。在逐仓模式下，您可以为这个仓位添加和减少保证金。
+				</view>
+				<view class="popup-btn" @click="changeShow=false">
+					<u-button text="确定" color="linear-gradient(90deg,#418cf1,#0065eb)">
+					</u-button>
+				</view>
+			</view>
+		</u-popup>
 	</view>
 </template>
 
@@ -194,6 +296,26 @@
 				}, {
 					text: '当前价格',
 					num: 46319.05,
+				}],
+				btnList1: [{
+					text: '继续策略循环',
+					icon: '../../static/jixu.png'
+				}, {
+					text: '执行单次策略',
+					icon: '../../static/danci.png'
+				}, {
+					text: '暂停策略循环',
+					icon: '../../static/zanting.png'
+				}, {
+					text: '关闭策略',
+					icon: '../../static/zanting.png',
+					disabled: true
+				}, {
+					text: '我的收益',
+					icon: '../../static/qian2.png'
+				}, {
+					text: '交易记录',
+					icon: '../../static/rizhi2.png'
 				}],
 				btnList: [{
 					text: '继续策略循环',
@@ -221,6 +343,7 @@
 					text: '交易记录',
 					icon: '../../static/rizhi2.png'
 				}],
+				creatNum: '',
 				firstP: '',
 				maxP: 0,
 				firstM: 1,
@@ -265,11 +388,39 @@
 					range: 0,
 					time: 0,
 					stopLoop: false
-				}
+				},
+				dealType: 1,
+				navList: [{
+					name: '币安账户资金划转',
+					key: 1
+				}, {
+					name: '变换逐全仓模式',
+					key: 2
+				}, {
+					name: '调整逐仓保证金',
+					key: 3
+				}, {
+					name: '币安合约U本账户',
+					key: 4
+				}],
+				navShow: false,
+				changeShow: false,
+				changeIndex: 1
 			};
 		},
 		onLoad: function(option) {
 			this.dealTitle = option.name
+			if (option.type === '1' || option.type === '2') {
+				if (option.tab === '1') {
+					this.dealType = 1
+				} else {
+					this.dealType = 2
+				}
+			} else if (option.type === '3') {
+				this.dealType = 3
+			} else {
+				this.dealType = 4
+			}
 		},
 		methods: {
 			radioClick(name) {
@@ -285,6 +436,34 @@
 				this.stopLosList.map((item, index) => {
 					item.checked = index === name ? true : false
 				})
+			},
+			navShowClick(item) {
+				console.log(item.key);
+				if (item.key === 1) {
+					this.$Fn.toPage('../financialTransition/financialTransition', {
+						name: '资金划转'
+					})
+				} else if (item.key === 2) {
+					this.changeShow = true
+				} else if (item.key === 3) {
+					this.$Fn.toPage('../adjustDeposit/adjustDeposit')
+				} else {
+					this.$Fn.toPage('../uAccount/uAccount', {
+						type: 1
+					})
+				}
+			},
+			rightClick() {
+				if (this.dealType === 3) {
+					this.navShow = true
+				} else if (this.dealType === 4) {
+					this.$Fn.toPage('../uAccount/uAccount', {
+						type: 2
+					})
+				}
+			},
+			changeTag(index) {
+				this.changeIndex = index
 			}
 		},
 	}
@@ -444,12 +623,12 @@
 						margin-left: 20rpx;
 						padding: 4rpx 20rpx;
 					}
+				}
 
-					.multiple {
-						font-size: 36rpx;
-						color: #999;
-						margin-left: 4rpx;
-					}
+				.multiple {
+					font-size: 36rpx;
+					color: #999;
+					margin-left: 4rpx;
 				}
 			}
 		}
@@ -489,6 +668,65 @@
 
 				.popup-btn {
 					margin: 80rpx 30rpx 0;
+				}
+
+				.check-tags {
+					font-size: 30rpx;
+					border-bottom: 2rpx solid #eee;
+					padding: 50rpx 0 30rpx;
+					margin: 0 30rpx;
+
+					.tag {
+						border: 2rpx solid #ddd;
+						color: #999;
+						border-radius: 8rpx;
+						width: 48%;
+						height: 80rpx;
+						line-height: 80rpx;
+						text-align: center;
+					}
+
+					.tag-active {
+						color: #4387ea;
+						font-weight: 700;
+						border: 2rpx solid #4387ea;
+						position: relative;
+						box-sizing: border-box;
+
+						&::before {
+							content: '';
+							display: block;
+							width: 44rpx;
+							height: 44rpx;
+							background-color: #4387ea;
+							position: absolute;
+							right: -2rpx;
+							bottom: -2rpx;
+							z-index: 1;
+							clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+						}
+
+						&::after {
+							content: '';
+							display: block;
+							width: 6rpx;
+							height: 20rpx;
+							border-right: #fff solid 3rpx;
+							border-bottom: #fff solid 3rpx;
+							transform: rotate(45deg);
+							position: absolute;
+							right: 6rpx;
+							bottom: 2rpx;
+							z-index: 2;
+						}
+					}
+				}
+
+				.text-popup {
+					margin: 20rpx 30rpx 0;
+					line-height: 1.5;
+					color: #999999;
+					font-size: 24rpx;
 				}
 			}
 		}

@@ -13,7 +13,7 @@
 		</u-cell-group>
 
 		<view class="btn">
-			<u-button type="primary" text="退出登录" color="#4387ea" @click="quit"></u-button>
+			<u-button type="primary" text="退出登录" @click="quit"></u-button>
 		</view>
 
 	</view>

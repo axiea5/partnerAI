@@ -17,7 +17,7 @@
 					@change="changeIpt"></u--input>
 			</view>
 			<view class="pg2-btn">
-				<u-button type="primary" text="提交" :disabled="disabled" color="#4387ea"></u-button>
+				<u-button type="primary" text="提交" :disabled="disabled"></u-button>
 			</view>
 		</view>
 	</view>

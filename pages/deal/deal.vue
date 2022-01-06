@@ -40,7 +40,8 @@
 			<u-radio-group v-model="radiovalue" placement="column" @change="groupChange">
 				<view class="detail-item df" v-for="(item, index) in detailList" :key="index">
 					<u-radio :customStyle="{margin: '0 20rpx 30rpx 0'}" :iconSize="22" @change="radioChange"></u-radio>
-					<view class="df df-betw detail-text" @click="$Fn.toPage('../dealDetail/dealDetail',{name:item.name})">
+					<view class="df df-betw detail-text"
+						@click="$Fn.toPage('../dealDetail/dealDetail',{name:item.name,type:headType,tab:tabs1Type})">
 						<view class="detail-item-center-l df df-col">
 							<view>
 								{{item.name}}
@@ -53,7 +54,6 @@
 							<view class="progress">
 								<text>{{item.per}}%</text>
 							</view>
-							<!-- <u-line-progress :percentage="item.per" height="25"></u-line-progress> -->
 							<text>预计盈利：0</text>
 						</view>
 					</view>
@@ -77,11 +77,15 @@
 		data() {
 			return {
 				headName: '火币(现货)',
+				headType: 1,
 				tabs1: [{
-					name: 'U本位'
+					name: 'U本位',
+					type: 1
 				}, {
-					name: '币本位'
-				}, ],
+					name: '币本位',
+					type: 2
+				}],
+				tabs1Type: 1,
 				tabs2: [{
 					name: '均价出'
 				}],
@@ -100,13 +104,17 @@
 				],
 				show: false,
 				alertList: [{
-					name: '火币(现货)'
+					name: '火币(现货)',
+					type: 1
 				}, {
-					name: '币安(现货)'
+					name: '币安(现货)',
+					type: 2
 				}, {
-					name: '币安(U本合约)'
+					name: '币安(U本合约)',
+					type: 3
 				}, {
-					name: 'OKEx(U本合约)'
+					name: 'OKEx(U本合约)',
+					type: 4
 				}],
 				active2: '',
 				detailList: [{
@@ -127,12 +135,13 @@
 				console.log(item);
 				this.show = false
 				this.headName = item.name
-				if (item.name === '火币(现货)') {
+				this.headType = item.type
+				if (item.type === 1) {
 					this.footerTitleShow = true
 					this.footerTitle = '火币'
 					this.tabs1Show = true
 					this.pieSHow = false
-				} else if (item.name === '币安(现货)') {
+				} else if (item.type === 2) {
 					this.footerTitleShow = true
 					this.footerTitle = '币安'
 					this.tabs1Show = true
@@ -145,6 +154,7 @@
 			},
 			tabs1Active(item) {
 				console.log(item);
+				this.tabs1Type = item.type
 			},
 			tabs2Active(index) {
 				console.log(this.active2);

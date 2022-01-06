@@ -8,7 +8,7 @@
 			</view>
 		</view>
 		<view class="x-btn">
-			<u-button type="primary" text="立即支付" color="#4387ea"></u-button>
+			<u-button type="primary" text="立即支付"></u-button>
 		</view>
 	</view>
 </template>

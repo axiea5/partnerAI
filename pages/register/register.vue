@@ -74,8 +74,8 @@
 		</u--form>
 		<!-- button -->
 		<view class="btn">
-			<u-button class="mb10" text="确认注册" type="primary" shape="circle" color="#4387ea" @click="submit"></u-button>
-			<u-button text="已注册,去登录" plain type="primary" shape="circle" color="#4387ea"
+			<u-button class="mb10" text="确认注册" type="primary" shape="circle" @click="submit"></u-button>
+			<u-button text="已注册,去登录" plain type="primary" shape="circle"
 				@click="$Fn.toPage('../login/login')"></u-button>
 		</view>
 		<!-- 下载 -->

@@ -67,6 +67,18 @@
 					</view>
 				</view>
 			</view>
+			<!-- 资金划转 -->
+			<view class="head-center" v-if="optionIndex===4">
+				<view class="formTo boderb">
+					<text class="gray">从</text>
+					<text>现货钱包</text>
+				</view>
+				<view class="formTo">
+					<text class="gray">到</text>
+					<text>U本位合约钱包</text>
+				</view>
+			</view>
+			
 			<!-- 从。。到。。 end -->
 			
 			<!-- 转换图标 -->
@@ -82,32 +94,40 @@
 			</view>
 			<view class="df">
 				<u--input v-model="num" type="number" border="none" fontSize="14"
-					:placeholder="optionIndex===2?'请输入提币数量':'请输入转换数量'" @change="changeIpt" @blur="iptNum=num">
+					:placeholder="optionIndex===2?'请输入提币数量':optionIndex===4?'请输入数量':'请输入转换数量'" @change="changeIpt" @blur="iptNum=num">
 				</u--input>
 				<text class="all" v-if="optionIndex===2">USDT</text>
-				<u-line direction="col" color="#ccc" length="20"></u-line>
-				<text class="all" @click="num=total;iptNum=total">全部</text>
+				<u-line direction="col" color="#ccc" length="20" v-if="optionIndex!==4"></u-line>
+				<text class="all" @click="num=total;iptNum=total" v-if="optionIndex!==4">全部</text>
 			</view>
-			<view class="little">
-				<text>可转换 {{total}} <text v-if="optionIndex===2" :decode="true"> {{''}} USDT</text></text>
+			<view v-if="optionIndex!==4">
+				<view class="little">
+					<text>可转换 {{total}} <text v-if="optionIndex===2" :decode="true"> {{''}} USDT</text></text>
+				</view>
+				<view class="ipt-label">
+					支付密码
+				</view>
+				<u--input v-model="pay" :password="true" border="none" fontSize="14" placeholder="请输入支付密码"
+					@change="changeIpt"></u--input>
+				<view class="little2">
+					<text class="text-tips">
+						为保障资金安全，该账户安全策略变更，密码修改，我们会对转换进行人工审核，请耐心等待工作人员电话或邮件联系
+					</text>
+				</view>
+				<view class="ipt-label df df-betw">
+					<text>到账数量</text>
+					<text>{{ iptNum }} <text v-if="optionIndex===2">{{' '}}点卡</text></text>
+				</view>
 			</view>
-			<view class="ipt-label">
-				支付密码
+			
+			
+			<view class="x-btn2" v-if="optionIndex===4">
+				<u-button type="primary" text="提交"></u-button>
 			</view>
-			<u--input v-model="pay" :password="true" border="none" fontSize="14" placeholder="请输入支付密码"
-				@change="changeIpt"></u--input>
-			<view class="little2">
-				<text class="text-tips">
-					为保障资金安全，该账户安全策略变更，密码修改，我们会对转换进行人工审核，请耐心等待工作人员电话或邮件联系
-				</text>
-			</view>
-			<view class="ipt-label df df-betw">
-				<text>到账数量</text>
-				<text>{{ iptNum }} <text v-if="optionIndex===2">{{' '}}点卡</text></text>
-			</view>
-			<view class="x-btn">
+			<view class="x-btn" v-else>
 				<u-button type="primary" text="兑换" :disabled="disabled"></u-button>
 			</view>
+			
 		</view>
 	</view>
 </template>
@@ -135,8 +155,10 @@
 				this.optionIndex = 1
 			} else if (option.name === '充币') {
 				this.optionIndex = 2
-			} else {
+			} else if(option.name ==='转换'){
 				this.optionIndex = 3
+			}else{
+				this.optionIndex = 4
 			}
 		},
 		methods: {
@@ -289,6 +311,11 @@
 
 			.x-btn {
 				margin-top: 30rpx;
+			}
+			.x-btn2 {
+				padding-top: 60rpx;
+				margin-top: 20rpx;
+				border-top: 1px solid #f5f5f5;
 			}
 		}
 

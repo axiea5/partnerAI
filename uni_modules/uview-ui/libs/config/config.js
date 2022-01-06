@@ -14,7 +14,7 @@ export default {
     ],
     // 颜色部分，本来可以通过scss的:export导出供js使用，但是奈何nvue不支持
     color: {
-        'u-primary': '#2979ff',
+        'u-primary': '#4387ea',
         'u-warning': '#ff9900',
         'u-success': '#19be6b',
         'u-error': '#fa3534',

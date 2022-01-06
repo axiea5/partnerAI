@@ -232,6 +232,22 @@
 				"enablePullDownRefresh": false,
 				"navigationBarTextStyle": "white"
 			}
+		}, {
+			"path": "pages/uAccount/uAccount",
+			"style": {
+				"navigationBarTitleText": "币安合约U本账户",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
+		}, {
+			"path": "pages/adjustDeposit/adjustDeposit",
+			"style": {
+				"navigationBarTitleText": "调整逐仓保证金",
+				"navigationBarBackgroundColor": "#f7f7f7",
+				"enablePullDownRefresh": false
+			}
+
 		}
 	],
 	"globalStyle": {

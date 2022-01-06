@@ -28,7 +28,7 @@
 					</u--input>
 				</u-form-item>
 			</u--form>
-			<u-button class="btn" type="primary" text="导入" @click="submit" color="#4387ea"></u-button>
+			<u-button class="btn" type="primary" text="导入" @click="submit"></u-button>
 		</view>
 	</view>
 </template>
