@@ -213,7 +213,7 @@
 
 				.blue-text {
 					color: #49659f;
-					margin-top: 30rpx;
+					margin-top: 20rpx;
 				}
 			}
 		}

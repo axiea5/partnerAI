@@ -71,8 +71,7 @@
 			"path": "pages/tradingRecord/tradingRecord",
 			"style": {
 				"navigationStyle": "custom",
-				"enablePullDownRefresh": false,
-				"navigationBarTextStyle": "white" // 状态栏字体为白色，只能为 white-白色，black-黑色 二选一
+				"enablePullDownRefresh": false
 			}
 
 		}, {
@@ -229,8 +228,7 @@
 			"path": "pages/dealDetail/dealDetail",
 			"style": {
 				"navigationStyle": "custom",
-				"enablePullDownRefresh": false,
-				"navigationBarTextStyle": "white"
+				"enablePullDownRefresh": false
 			}
 		}, {
 			"path": "pages/uAccount/uAccount",

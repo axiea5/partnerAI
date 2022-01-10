@@ -1,5 +1,8 @@
 <template>
 	<view class="x-dealDetail">
+		<view class="status_bar">
+			<!-- 这里是状态栏 -->
+		</view>
 		<u-navbar title="详情" @rightClick="rightClick" @leftClick="$Fn.turnoff()" bgColor="transparent"
 			:rightIcon="dealType===3?'list':dealType===4?'../../static/qian2.png':''" class="nav-bar" :border="true">
 		</u-navbar>
@@ -476,6 +479,11 @@
 </style>
 <style lang="scss" scoped>
 	.x-dealDetail {
+		padding-bottom:50rpx ;
+		.status_bar {
+			height: var(--status-bar-height);
+			width: 100%;
+		}
 		uni-view {
 			line-height: 1;
 		}

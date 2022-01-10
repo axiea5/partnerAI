@@ -18,7 +18,7 @@
 	@import "@/uni_modules/uview-ui/index.scss";
 
 	page {
-		font-size: 28rpx;
+		font-size: 30rpx;
 	}
 
 	.df {
@@ -48,7 +48,7 @@
 	.x-group {
 		/deep/.u-cell-group__wrapper {
 			.u-cell__title-text {
-				font-size: 28rpx;
+				font-size: 30rpx;
 			}
 
 			>.u-line {
@@ -76,17 +76,14 @@
 					border-radius: 10rpx;
 
 					.u-action-sheet__item-wrap__item {
-						padding: 20rpx;
-
 						.u-action-sheet__item-wrap__item__name {
-							font-size: 28rpx;
+							font-size: 30rpx;
 						}
 					}
 				}
 
 				.u-action-sheet__cancel-text {
-					padding: 20rpx;
-					font-size: 28rpx;
+					font-size: 30rpx;
 				}
 			}
 		}
@@ -95,7 +92,7 @@
 	.x-form {
 		.u-form-item {
 			/deep/.u-form-item__body__left__content__label {
-				font-size: 28rpx;
+				font-size: 30rpx;
 			}
 		}
 	}

@@ -16,15 +16,17 @@
 				<view class="content-head">筛选</view>
 				<view class="content-in">
 					<view class="content-title">交易所</view>
-					<u--input placeholder="请输入交易所" border="surround" :fontSize="14" v-model="bourse"></u--input>
+					<view class="surround">
+						<u--input placeholder="请输入交易所" border :fontSize="14" v-model="bourse"></u--input>
+					</view>
 					<view class="content-title">定义时间</view>
 					<view class="df df-acenter">
-						<view @click="showTime=true;timeIndex=1">
-							<u--input placeholder="开始时间" disabled :fontSize="14" disabledColor="#ffffff"
-								border="surround" v-model="startTime"></u--input>
+						<view @click="showTime=true;timeIndex=1" class="surround">
+							<u--input placeholder="开始时间" disabled :fontSize="14" disabledColor="#ffffff" border
+								v-model="startTime"></u--input>
 						</view>
 						<text class="split">至</text>
-						<view @click="showTime=true;timeIndex=2">
+						<view @click="showTime=true;timeIndex=2" class="surround">
 							<u--input placeholder="结束时间" disabled :fontSize="14" disabledColor="#ffffff"
 								border="surround" v-model="endTime"></u--input>
 						</view>
@@ -46,16 +48,16 @@
 
 		<!-- 标签栏 -->
 		<u-tabs :list="navList" class="nav-tabs" @click="clickNav"
-			:activeStyle="{color:'#4086f0',fontWeight:700,fontSize:'28rpx'}" :inactiveStyle="{fontSize:'28rpx'}" style="background-color: #FFFFFF;"
-		</u-tabs>
-		<!-- 内容 -->
-		<view class="hasno">暂无数据</view>
+			:activeStyle="{color:'#4086f0',fontWeight:700,fontSize:'28rpx'}" :inactiveStyle="{fontSize:'28rpx'}"
+			style="background-color: #FFFFFF;"></u-tabs>
+			<!-- 内容 -->
+			<view class="hasno">暂无数据</view>
 
-		<!-- 底部 -->
-		<view class="total df df-betw" style="background-color: #FFFFFF;">
-			<text>合计盈利：<text class="green">0USDT</text></text>
-			<text>交易0单</text>
-		</view>
+			<!-- 底部 -->
+			<view class="total df df-betw" style="background-color: #FFFFFF;">
+				<text>合计盈利：<text class="green">0USDT</text></text>
+				<text>交易0单</text>
+			</view>
 	</view>
 </template>
 
@@ -135,6 +137,11 @@
 			/deep/.uni-nav-bar-text {
 				font-size: 32rpx;
 			}
+
+			/deep/.uni-navbar__header-btns-right {
+				padding-right: 0;
+				width: 120rpx;
+			}
 		}
 
 		.nav-tabs {
@@ -163,6 +170,10 @@
 
 				.content-title {
 					margin: 42rpx 0;
+				}
+
+				.surround {
+					border: 2rpx solid #e8e8e8;
 				}
 
 				.split {

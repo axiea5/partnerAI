@@ -10,11 +10,12 @@
 			</view>
 		</uni-nav-bar>
 		<view class="search-List">
-			<view class="df df-betw detail-text c-gary" v-for="item in detailList" :key="item.name">
+			<view class="df df-betw detail-text c-gary" v-for="item in detailList" :key="item.name"
+				@click="$Fn.toPage('../dealDetail/dealDetail',{name:item.name,type:3})">
 				<view class="detail-item-center-l df df-col">
 					<view class="df df-acenter">
 						<text>{{item.name}}</text>
-						<view class="x-tag bg-gray">
+						<view class="x-tag bg-gray mb10">
 							<text class="tag-text">全仓</text>
 						</view>
 					</view>
@@ -93,6 +94,10 @@
 					transform: scale(0.75);
 					color: #fff;
 				}
+			}
+
+			.mb10 {
+				margin-left: 10rpx;
 			}
 		}
 
