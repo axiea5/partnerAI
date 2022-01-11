@@ -173,7 +173,6 @@
 				if (index === 2) {
 					this.selectShow = false
 					this.transFrom = val
-					console.log(this.selectShow);
 				}else{
 					this.selectShow = false
 					this.transTo = val

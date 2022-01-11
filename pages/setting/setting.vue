@@ -49,8 +49,6 @@
 				let that = this;
 				uni.getStorageInfo({
 					success(res) {
-						//console.log(res.keys);
-						//console.log(res.limitSize);
 						let size = res.currentSize;
 						if (size < 1024) {
 							that.storageSize = size + ' B';

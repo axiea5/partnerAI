@@ -78,7 +78,6 @@
 		},
 		methods: {
 			clickNav(item) {
-				console.log(item.index);
 				this.navIndex = item.index
 				if (item.index === 0) {
 					this.record = '成交'

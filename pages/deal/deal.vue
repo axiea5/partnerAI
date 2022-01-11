@@ -132,7 +132,6 @@
 		},
 		methods: {
 			alertClick(item) {
-				console.log(item);
 				this.show = false
 				this.headName = item.name
 				this.headType = item.type
@@ -153,7 +152,6 @@
 				}
 			},
 			tabs1Active(item) {
-				console.log(item);
 				this.tabs1Type = item.type
 			},
 			tabs2Active(index) {

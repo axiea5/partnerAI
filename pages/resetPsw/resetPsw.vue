@@ -107,7 +107,6 @@
 		},
 		methods: {
 			alertClick(item) {
-				console.log(item);
 				this.form.quest = item.name
 			},
 			submit() {
@@ -115,7 +114,6 @@
 					uni.$u.toast('校验通过')
 				}).catch(errors => {
 					uni.$u.toast(errors[0].message)
-					console.log(errors);
 				})
 			}
 		}

@@ -90,11 +90,9 @@
 		},
 		methods: {
 			alertClick1(item) {
-				console.log(item);
 				this.form.quest1 = item.name
 			},
 			alertClick2(item) {
-				console.log(item);
 				this.form.quest2 = item.name
 			},
 			submit() {
@@ -102,7 +100,6 @@
 					uni.$u.toast('校验通过')
 				}).catch(errors => {
 					uni.$u.toast(errors[0].message)
-					console.log(errors);
 				})
 			}
 		}

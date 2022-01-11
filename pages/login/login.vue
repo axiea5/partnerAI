@@ -106,7 +106,6 @@
 		},
 		methods: {
 			captcha(emit) {
-				console.log(emit);
 				this.captchaVal = emit;
 			},
 			submit() {
@@ -121,7 +120,6 @@
 					    }
 					});
 				}).catch(errors => {
-					console.log(errors);
 					uni.$u.toast(errors[0].message)
 				})
 			}

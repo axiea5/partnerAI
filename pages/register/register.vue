@@ -200,7 +200,6 @@
 		},
 		methods: {
 			selectQuest(index) {
-				console.log(index);
 				this.mibaoShow = true
 				this.selectIndex = index
 			},
@@ -223,7 +222,6 @@
 					uni.$u.toast('校验通过')
 				}).catch(errors => {
 					uni.$u.toast(errors[0].message)
-					console.log(errors);
 				})
 			}
 		},

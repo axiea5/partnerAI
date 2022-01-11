@@ -31,56 +31,6 @@
 			<view class="x-table-head">
 				行情
 			</view>
-			<!-- <uni-table class="x-table-in"> -->
-			<!-- 表头行 -->
-			<!-- <uni-tr>
-					<uni-th align="center" width="30">币种</uni-th>
-					<uni-th align="center" width="85"></uni-th>
-					<uni-th align="center" width="150" :sortable="true">币市值(CNY)</uni-th>
-					<uni-th align="center" width="80" :sortable="true">价格</uni-th>
-				</uni-tr> -->
-			<!-- 表格数据行 -->
-			<!-- <uni-tr>
-					<uni-td>
-						<view class="f10">
-							001
-						</view>
-					</uni-td>
-					<uni-td class="kind">
-						<view class="dark">BTC</view>
-						<text class="f10">比特币/<br />Bitcion</text>
-					</uni-td>
-					<uni-td>
-						<view class="dark">5.3829万亿</view>
-						<text class="f10">H:3597.0634552089</text>
-					</uni-td>
-					<uni-td class="align-r">
-						<view class="red">$46688.7</view>
-						<text class="red f10">-1.17%</text>
-					</uni-td>
-				</uni-tr>
-
-				<uni-tr>
-					<uni-td>
-						<view class="f10">
-							002
-						</view>
-					</uni-td>
-					<uni-td class="kind">
-						<view class="dark">ETH</view>
-						<text class="f10">以太坊/<br />Ethereum</text>
-					</uni-td>
-					<uni-td>
-						<view class="dark">2.6923万亿</view>
-						<text class="f10">24H:5.8667</text>
-					</uni-td>
-					<uni-td class="align-r">
-						<view class="red">$3876.22</view>
-						<text class="red f10">-5.04%</text>
-					</uni-td>
-				</uni-tr>
-			</uni-table> -->
-
 			<lyy-table :contents="contents" :headers="tableHeaders" :totalRow="[]"></lyy-table>
 		</view>
 	</view>
@@ -116,6 +66,7 @@
 				tableHeaders: [{
 					label: '币种',
 					width: 32,
+					key:'index',
 					format: {
 						type: 'index'
 					}
@@ -217,7 +168,7 @@
 		}
 
 		.advertising {
-			padding: 0 20rpx 20rpx;
+			padding: 20rpx;
 			height: 400rpx;
 			box-sizing: border-box;
 			display: grid;

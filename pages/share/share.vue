@@ -27,10 +27,8 @@
 		methods: {
 			canvasImg() {
 				var pages = getCurrentPages(); //获取当前页面信息
-				console.log(pages)
 				var page = pages[pages.length - 1];
 				var bitmap = null;
-				console.log(page)
 				var currentWebview = page.$getAppWebview();
 				bitmap = new plus.nativeObj.Bitmap('amway_img');
 				// 将webview内容绘制到Bitmap对象中

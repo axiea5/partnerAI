@@ -1,10 +1,10 @@
 <template>
 	<!-- 注意：该组件已经修改，其他地方引用时注意 -->
 	<view class="x-table-in">
-		<uni-table stripe :loading="loading">
+		<uni-table :loading="loading">
 			<uni-tr style="display:table;width:inherit">
 				<uni-th v-for="(item,index) in headers" :key="index" align="center" :width="item.width"
-					:style="{display:item.hidden?'none':'table-cell',position:'relative' }">
+					:style="{display:item.hidden?'none':'table-cell',position:'relative',borderBottom:0 }">
 					<view v-if="item.sort" style="height: 100%;width: 100%;position: absolute;left: 0;top: 0;"
 						@click="doSort(item)"></view>
 					<view style="display: flex;flex-direction: row;justify-content: center;">
@@ -43,7 +43,7 @@
 				</uni-tr>
 				<!-- 合计 -->
 				<uni-tr v-if="totalRow.length>0">
-					<uni-td v-for="(header,index) in headers" :key="Math.random()"
+					<uni-td v-for="(header,index) in headers" :key="header.key"
 						:style="{textAlign: 'center',display:header.hidden?'none':'table-cell',width:header.width+'px'}">
 						<text v-if="index==0">合计</text>
 						<view v-else>
@@ -122,15 +122,15 @@
 			},
 			headers: {
 				type: Array,
-				default: [],
+				default: () => []
 			},
 			contents: {
 				type: Array,
-				default: []
+				default: () => []
 			},
 			totalRow: {
 				type: Array,
-				default: []
+				default: () => []
 			}
 		},
 		mounted() {
@@ -158,13 +158,11 @@
 					this.rendertotalRow(header)
 				}
 				this.$forceUpdate()
-				// console.log(value)
 			},
 			//监听排序变化
 			sortChange(value) {
 				var that = this
 				var contents = that.contents.slice()
-				console.log(that.sortContents)
 				switch (value.sortWay) {
 					case 'none':
 						that.sortContents = contents
@@ -212,8 +210,6 @@
 		methods: {
 			//点击排序表头时存储上次排序列名，并循环切换排序方式
 			doSort(item) {
-				console.log(item);
-
 				if (this.lastSortItem !== item.format.keys[0]) {
 					this.lastSortItem = item.format.keys[0]
 					this.sortIndex = 0
@@ -228,8 +224,6 @@
 						this.sortWay = this.sortWays[0]
 					}
 				}
-				console.log(this.lastSortItem);
-				console.log(this.sortWay);
 			},
 			//表格内容渲染
 			renderContents() {
@@ -246,14 +240,12 @@
 								header.format.type === 'html')) {
 							var template = header.format.template
 							var keys = header.format.keys
-							console.log(typeof template)
 							if (typeof template === 'function') {
 								var arg = []
 								keys.forEach((el, i) => {
 									arg.push(contents[index][el])
 								})
 								result = template(arg)
-								console.log(result)
 							} else {
 								keys.forEach((el, i) => {
 									var value = contents[index][el]
@@ -267,7 +259,6 @@
 						//计算类型格式化
 						else if (typeof header.format !== 'undefined' && (header.format.type ===
 								'compute' || header.format.type === 'progress')) {
-							console.log(header.format.template)
 							var temp = header.format.template
 							var keys = header.format.keys
 							keys.forEach((el, i) => {
@@ -317,7 +308,6 @@
 						for (var index in keys) {
 							var reg = new RegExp('\\{' + index + '}', 'g')
 							temp = temp.replace(reg, this.footContent[keys[index]])
-							//console.log(this.footContent[keys[index]])
 						}
 						result = (new Function('return ' + temp))()
 						result = isNaN(result) ? 0 : result

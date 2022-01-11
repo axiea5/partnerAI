@@ -67,8 +67,6 @@
 		},
 		methods: {
 			tagsCLick(name, inx) {
-				// console.log(inx);
-				console.log(name);
 				if (inx === 1) {
 					this.directionList.map((item, index) => {
 						item.checked = index === name ? true : false

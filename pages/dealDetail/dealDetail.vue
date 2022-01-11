@@ -432,7 +432,6 @@
 				})
 			},
 			tacticsClick(item) {
-				console.log(item);
 				this.tactics = item.name
 			},
 			stopLosListClick(name) {
